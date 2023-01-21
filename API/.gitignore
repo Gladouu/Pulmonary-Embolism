@@ -2,3 +2,4 @@
 Icon?
 .vscode
 __pycache__
+data/penet_best.pth.tar
