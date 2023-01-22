@@ -8,12 +8,14 @@ import os
 import util
 import torch
 import bcrypt
+import uvicorn
 import mysql.connector
 
 from saver.model_saver import ModelSaver
 from termcolor import colored
 from pydantic import BaseModel
-from fastapi import FastAPI, HTTPException, Depends, HTTPBasic, HTTPBasicCredentials, status, UploadFile, File
+from fastapi import FastAPI, HTTPException, Depends, status, UploadFile, File
+from fastapi.security import HTTPBasic, HTTPBasicCredentials
 
 
 app = FastAPI(
@@ -141,3 +143,6 @@ async def predict_pulmonary_embolism(input_study: UploadFile = File(...), ckpt_p
     add_prediction_to_db(input_study, max(predicted_probabilities), User.id)
 
     return max(predicted_probabilities)
+
+if __name__ == "__main__":
+    uvicorn.run("api:app")
