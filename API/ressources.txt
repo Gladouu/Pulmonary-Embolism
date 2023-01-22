@@ -1,9 +1,20 @@
-# Créer une API de machine learning avec FastAPI et Docker ? @Mirakl @AHMEDBESBES @DATASCIENTEST
-https://www.youtube.com/watch?v=D7-YDr6ZVZI
-
 # Implémentez vos bases de données relationnelles avec SQL @Openclass Rooms
 https://openclassrooms.com/fr/courses/6971126-implementez-vos-bases-de-donnees-relationnelles-avec-sql
 
+
 # FastAPI Documentation
 https://fastapi.tiangolo.com
+
+
+# Créer une API de machine learning avec FastAPI et Docker ? @Mirakl @AHMEDBESBES @DATASCIENTEST
+https://www.youtube.com/watch?v=D7-YDr6ZVZI
+
+
+# Repository de la vidéo 
+https://github.com/ahmedbesbes/anonymization-api
+
+
+# Article TDS de la vidéo 
+https://towardsdatascience.com/how-to-deploy-a-machine-learning-model-with-fastapi-docker-and-github-actions-13374cbd638a
+
 
