@@ -1,0 +1,6 @@
+.DS_Store
+Icon?
+.vscode
+.env
+data/
+!data/penet_best.pth.tar
