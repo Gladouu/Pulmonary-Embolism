@@ -14,10 +14,10 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     name: Build
-    env: 
+    env:
       MYSQL_ROOT_PASSWORD: ${{ secrets.MYSQL_ROOT_PASSWORD }}
       USERNAME: ${{ secrets.USERNAME }}
-      
+
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -26,13 +26,13 @@ jobs:
       - name: executing ssh commands using ssh key
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.HOST}}
+          host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
           script: |
             sudo su
             rm -rf pe-api
             git clone git@github.com:Gladouu/Pulmonary-Embolism.git
-            cd pe-api
+            cd Pulmonary-Embolism/API
             sudo docker-compose down
             sudo docker-compose -f docker-compose.yml up --build -d
