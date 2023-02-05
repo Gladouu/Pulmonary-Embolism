@@ -4,3 +4,4 @@ Icon?
 __pycache__
 data/penet_best.pth.tar
 .env
+*.zip
