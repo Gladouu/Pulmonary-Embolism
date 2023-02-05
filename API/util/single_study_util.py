@@ -3,26 +3,31 @@ import pydicom
 import cv2
 import torch
 import util
+import zipfile
+import io
 import os
-import glob
-# from ct.ct_pe_constants import W_CENTER_DEFAULT, W_WIDTH_DEFAULT, CONTRAST_HU_MEAN, \
-#     CONTRAST_HU_MIN, CONTRAST_HU_MAX
 
 
-def dicom_2_npy(input_study, series_description):
+async def dicom_2_npy(zipped_input_study):
     dcm_slices = []
 
-    # get all dicom files in path
-    files = glob.glob(os.path.join(input_study, "*dcm"))
+    # convert UploadedFile to io.BytesIO
+    input_zip_bytes = io.BytesIO(await zipped_input_study.read())
+
+    zip_file = zipfile.ZipFile(input_zip_bytes)
+
+    # extract all dicom files from zip
+    zip_file.extractall()
+    files = [f for f in zip_file.namelist() if f.endswith(".dcm")]
+
     if len(files) == 0:
-        raise Exception("No dicom files in directory")
-        return
+        raise Exception("No dicom files in zip")
 
     # read in all dcm slices
-    for dicom in files:
+    for dicom_file in files:
         try:
-            dcm = pydicom.dcmread(dicom)
-            arr = dcm.pixel_array
+            dcm = pydicom.dcmread(dicom_file)
+            # arr = dcm.pixel_array
         except:
             print("error reading dicom")
             continue
@@ -34,7 +39,6 @@ def dicom_2_npy(input_study, series_description):
     # check if dicoms are succesfully retrived
     if len(dcm_slices) == 0:
         raise Exception("no dicom files retrived")
-        return
 
     # sort slices
     # test using image patient location instead
@@ -48,6 +52,10 @@ def dicom_2_npy(input_study, series_description):
     # test using image patient location instead
     # if dcm.PatientPosition == "FFS":
     #    npy_volume = npy_volume[::-1]
+
+    # remove extracted files
+    for f in files:
+        os.remove(f)
 
     return npy_volume
 
