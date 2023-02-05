@@ -18,17 +18,19 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Check
+        uses: actions/checkout@v2
       - name: Build and push
-        uses: docker/build-push-action@v4
+        uses: docker/build-push-action@v3
         with:
-          context: ../API/
+          context: ./API/
           file: Dockerfile
           push: true
           tags: gladou/pe_api:1.0.${{ github.run_number}}
       - name: Build and push
         uses: docker/build-push-action@v4
         with:
-          context: ../API/database/
+          context: ./API/database/
           file: Dockerfile
           push: true
           tags: gladou/pe_db:1.0.${{ github.run_number}}
