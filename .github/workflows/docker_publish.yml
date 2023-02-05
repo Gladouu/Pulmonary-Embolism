@@ -24,13 +24,13 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: ./API/
-          file: Dockerfile
+          file: ./API/Dockerfile
           push: true
           tags: gladou/pe_api:1.0.${{ github.run_number}}
       - name: Build and push
         uses: docker/build-push-action@v4
         with:
           context: ./API/database/
-          file: Dockerfile
+          file: ./API/database/Dockerfile
           push: true
           tags: gladou/pe_db:1.0.${{ github.run_number}}
