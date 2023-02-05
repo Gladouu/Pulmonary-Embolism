@@ -1,0 +1,34 @@
+version: "3.9"
+
+services:
+  pe_db:
+    restart: always
+    build:
+      context: ./database
+      dockerfile: Dockerfile
+    # OR image: gladou/pe_db:latest
+    container_name: db_container
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+    volumes:
+      - /Users/Gladou/Documents/Data Science/Projects.nosync/Pulmonary-Embolism/API/database/pe_api.sql:/docker-entrypoint-initdb.d/pe_api.sql
+
+  pe_api:
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    # OR image: gladou/pe_api:latest
+    container_name: api_container
+    ports:
+      - "8000:8000"
+    environment:
+      DB_HOST: ${DB_HOST}
+      DB_USER: ${DB_USER}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+    depends_on:
+      - pe_db
