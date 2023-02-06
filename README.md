@@ -1,18 +1,12 @@
 # Pylmonary Embolism 
 
-<p style="text-align: justify;">
-<p> 
+<p align="justify;">
 
 This repository contains, **for the moment**, only an API for the prediction of Pulmonary Embolism (PE) from DICOM images.
-
-</p>
 
 <p align="center">
   <img src="./img/grad_cam.gif"/>
 </p>
-
-<p style="text-align: justify;">
-<p>
 
 This API is the project of my [MLOps training](https://datascientest.com/formation-ml-ops) with the Data Scientest organization.   
 The Machine Learning Engineer training leads to a certificate issued by MINES ParisTech | PSL Executive Education. The validation of the skills developed during this training allows the validation of the entire RNCP 36129 certification "Project Manager in Artificial Intelligence" of level 7 (equivalent to BAC+5).
@@ -25,5 +19,4 @@ These competitions propose to develop a Machine Learning algorithm to detect and
 
 ## Available soon in this directory, my pulmonary embolism detection algorithm.
 
-</p>
 </p>
