@@ -1,5 +1,5 @@
 # Pylmonary Embolism 
-<p style="text-align: center;">
+<p style="text-align: justify;">
 
 This repository contains, **for the moment**, only an API for the prediction of Pulmonary Embolism (PE) from DICOM images.
 
