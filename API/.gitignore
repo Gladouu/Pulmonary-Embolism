@@ -5,3 +5,6 @@ __pycache__
 data/penet_best.pth.tar
 .env
 *.zip
+*.nii.gz
+*.mat
+*.dcm
