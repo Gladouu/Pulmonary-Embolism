@@ -11,8 +11,8 @@ This project is inspired by the RSNA competition in 2020 as well as the JFR Data
 
 These competitions propose to develop a Machine Learning algorithm to detect and characterize instances of pulmonary embolism on chest CT studies.
 
-## Available soon in this directory, my pulmonary embolism detection algorithm. 
+**Available soon in this directory, my pulmonary embolism detection algorithm.**
 
-### For more details, please consult the [README.md](https://github.com/Gladouu/Pulmonary-Embolism/tree/main/API/README.md) inside the API folder.
+**For more details, please consult the [README.md](https://github.com/Gladouu/Pulmonary-Embolism/tree/main/API/README.md) inside the API folder.**
 
-{: style="text-align: justify"}
+{: .text-justify}
