@@ -37,7 +37,7 @@ The checkpoints and weights for PENet are stored [here](https://stanfordmedicine
 #### Environment Setup 
 1. Please install [Docker](https://docs.docker.com/get-docker/) in order to create a Docker environment.
 2. Clone this repo (from the command-line: `git clone git@github.com:Gladouu/Pulmonary-Embolism.git`).
-3. You must be in the API folder : `cd Pulmonary Embolism/API`.
+3. You must be in the API folder : `cd Pulmonary_Embolism/API`.
 4. Create and activate the API from docker-cli : `docker-compose up`.
 
 
@@ -46,12 +46,12 @@ The checkpoints and weights for PENet are stored [here](https://stanfordmedicine
 ##### Download the data
 In order to test this application, you must have CTPA in DICOM format. If you want, it's possible to find some in open-source, like the FUMPE dataset available [here](https://www.kaggle.com/datasets/andrewmvd/pulmonary-embolism-in-ct-images). 
 
-This is only a suggestion but this dataset will allow you to have the original DICOM and Ground Truth, to visualize the Pulmonary Embolism. We suggest the [ITK-Snap](http://www.itksnap.org/pmwiki/pmwiki.php?n=Main.HomePage) visualization software. You just have to drag and drop the DICOM images, as well as the segmentation (you should select load as main segmentation).
+This is only a suggestion but this dataset will allow you to have the original DICOM and Ground Truth, to visualize the Pulmonary Embolism. We suggest the [ITK-Snap](http://www.itksnap.org/pmwiki/pmwiki.php?n=Main.HomePage) visualization software. You just have to drag and drop the DICOM images, as well as the segmentation (you should select load as main segmentation for overlap).
 
 ##### Preprocessing the data
 For testing this API, you have to create a zip file from your DICOM images. 
 
 ##### Testing
-The API is available on your favorite browser at : [127.0.0.1:8000/docs](127.0.0.1:8000/docs)
+The API is available on your favorite browser at : [127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
 
 
