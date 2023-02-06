@@ -4,7 +4,6 @@
  Creation date: January 2023
 '''
 
-import os
 import util
 import time
 import torch
@@ -24,20 +23,12 @@ app = FastAPI(
     title="Pulmonary Embolism - DataScientest MLOps Training Project")
 
 
-# required_envs = ['DB_HOST', 'DB_USER', 'DB_PASSWORD', 'DB_NAME']
-
-
-# for env in required_envs:
-#     if env not in os.environ:
-#         raise ValueError(f"{env} env var is not set.")
-
-
 # database connection
 cnx = mysql.connector.connect(
-    host=DB_HOST,#"host.docker.internal",  # os.environ("DB_HOST"),
-    user=DB_USER, #"root",  # os.environ("DB_USER"),
-    password=MYSQL_ROOT_PASSWORD, #"8vdkqk13",  # os.environ['DB_PASSWORD'],
-    database=MYSQL_DATABASE #"pe_api",   # os.environ("DB_NAME"),
+    host=DB_HOST,  # "host.docker.internal",
+    user=DB_USER,
+    password=MYSQL_ROOT_PASSWORD,
+    database=MYSQL_DATABASE
 )
 
 cursor = cnx.cursor()
